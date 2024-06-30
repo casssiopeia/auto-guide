@@ -1,10 +1,10 @@
 import React from "react";
 
-export const Favorites = () => {
+export const Basement = () => {
 
     return (
         <>
-            <div>Favorites</div>
+            <div>Basement</div>
         </>
     )
 }

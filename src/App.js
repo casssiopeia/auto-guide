@@ -1,10 +1,11 @@
 import React from "react";
+import { Catalog } from "./components/catalog";
 
 export const App = () => {
 
     return(
         <>
-            <h1>Hello world!!!</h1>
+            <Catalog />
         </>
     );
 }
