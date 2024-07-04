@@ -34,3 +34,5 @@ export const AutoCard = ({ picture, brand, model, year, price, engine, gearBox, 
         </>
     )
 }
+
+// TODO: Добавить оценку

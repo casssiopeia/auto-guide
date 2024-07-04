@@ -32,3 +32,7 @@ export const Details = memo(({ picture, brand, model, year, engine, bodyType, ge
         </>
     )
 })
+
+// TODO:
+// Добавить возможность оценивать
+// Добавить возможность комментировать
