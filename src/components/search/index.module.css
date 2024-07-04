@@ -1,0 +1,9 @@
+.searchField input {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 18px;
+    width: 400px
+}

@@ -1,10 +1,11 @@
 import React from "react";
+import styles from "./index.module.css";
 
 export const Button = () => {
 
     return (
         <>
-            <div>Button</div>
+            <button className={`${styles.addButton}`}>Сравнить</button>
         </>
     )
 }

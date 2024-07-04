@@ -10,7 +10,7 @@
             "color": "Nardo Grey",
             "price": 150000,
             "description": "Длина: 5022 мм, Ширина: 2007 мм, Высота: 1699 мм",
-            "picrure": "https://f7432d8eadcf865aa9d9-9c672a3a4ecaaacdf2fee3b3e6fd2716.ssl.cf3.rackcdn.com/C3132/U1135/IMG_28454-large.jpg",
+            "picture": "https://f7432d8eadcf865aa9d9-9c672a3a4ecaaacdf2fee3b3e6fd2716.ssl.cf3.rackcdn.com/C3132/U1135/IMG_28454-large.jpg",
             "id": "1"
         },
         {
@@ -23,7 +23,7 @@
             "color": "Deep Black",
             "price": 90000,
             "description": "Длина: 5172 мм, Ширина: 1945 мм, Высота: 1473 мм",
-            "picrure": "https://i.ytimg.com/vi/CmRqSQeT4qk/sddefault.jpg",
+            "picture": "https://i.ytimg.com/vi/CmRqSQeT4qk/sddefault.jpg",
             "id": "2"
         },
         {
@@ -36,7 +36,7 @@
             "color": "Nardo Grey",
             "price": 120000,
             "description": "Длина: 5009 мм, Ширина: 1950 мм, Высота: 1434 мм",
-            "picrure": "https://cdn.prod.website-files.com/5b4a3b3971d099f78f362505/619f43716da0c397dcc2c333_2022-Audi-RS7-Nardo%20Gray-WUAPCBF2XNN900671_012.JPG",
+            "picture": "https://cdn.prod.website-files.com/5b4a3b3971d099f78f362505/619f43716da0c397dcc2c333_2022-Audi-RS7-Nardo%20Gray-WUAPCBF2XNN900671_012.JPG",
             "id": "3"
         },
         {
@@ -49,7 +49,7 @@
             "color": "White",
             "price": 40000,
             "description": "Длина: 4939 мм, Ширина: 1886 мм (без учета зеркал), Высота: 1457 мм",
-            "picrure": "https://c0.carsie.ie/d43864c90df075c94489ddbe4ca5ffe97c64a813bdc9ba7d2578336b7838afb7.jpg",
+            "picture": "https://c0.carsie.ie/d43864c90df075c94489ddbe4ca5ffe97c64a813bdc9ba7d2578336b7838afb7.jpg",
             "id": "4"
         }
     ]

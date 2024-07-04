@@ -1,0 +1,55 @@
+.card {
+    max-width: 325px;
+    height: 430px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px 20px 0 20px;
+    flex: 0 1 calc(33.333% - 0px);
+    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.4);
+    transform: scale(1);
+    position: relative;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.01);
+}
+
+.img {
+    width: 280px;
+    height: 190px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-size: 30px;
+    border-top: 2px solid lightgray;
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.bookmark {
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.bookmark:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.btnWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 8px;
+}
