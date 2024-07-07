@@ -1,11 +1,10 @@
 import React from "react";
 import styles from "./index.module.css";
 
-export const Button = () => {
-
-    return (
-        <>
-            <button className={`${styles.addButton}`}>Сравнить</button>
-        </>
-    )
-}
+export const Button = ({ onClick }) => {
+  return (
+    <button onClick={onClick} className={styles.addButton}>
+      Сравнить
+    </button>
+  );
+};

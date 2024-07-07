@@ -17,6 +17,23 @@
     z-index: 1000;
 }
 
+.details::-webkit-scrollbar-thumb {
+    background: #f0f;
+    border-radius: 10px;
+    width: 5px;
+}
+.details::-webkit-scrollbar-track {
+    background: #ff0;
+    width: 10px;
+    border-radius: 10px;
+}
+.details::-webkit-scrollbar {
+    width: 10px;
+    padding: 5px;
+    margin: 5px;
+   height: calc(100% - 20px);
+}
+
 .overlay {
     position: fixed;
     top: 0;
@@ -33,6 +50,13 @@
     border-bottom: 2px solid lightgray;
     margin-bottom: 15px;
     padding: 5px;
+    position: sticky;
+    background-color: #fff;
+    top: -15px;
+    left: -15px;
+    right: 0;
+    width: 100%;
+
 }
 
 .close h3 {
