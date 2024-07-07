@@ -1,7 +1,12 @@
 .catalog {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     justify-content: center;
     gap: 35px;
-    margin-top: 60px;
+    grid-template-columns: repeat(auto-fill, 300px);
+}
+
+.wrapper {
+    margin: 0px auto;
+    background-color: white;
+    padding: 100px 10px 10px;
 }

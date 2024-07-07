@@ -11,6 +11,7 @@ export const Header = () => {
             <div className={`${styles.header}`}>
                 <div className={`${styles.headerElems}`}>
                     <h2>Auto Guide</h2>
+                    {/* TODO: вынести целиком в компонент */}
                     <div className={`${styles.search}`}>
                         <label>Поиск</label>
                         <Search />
