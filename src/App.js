@@ -10,7 +10,7 @@ export const App = () => {
 
     useEffect(() => {
         dispatch(getCars);
-    }, []);
+    }, [dispatch]);
 
     return(
         <>
