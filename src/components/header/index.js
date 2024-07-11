@@ -12,7 +12,6 @@ export const Header = () => {
                 <div className={`${styles.headerElems}`}>
                     <h2>Auto Guide</h2>
                     <div className={`${styles.search}`}>
-                        <label>Поиск</label>
                         <Search />
                     </div>
                     <BookmarksOutlined style={{fontSize: 32}} className={`${styles.favorites}`} />

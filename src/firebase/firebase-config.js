@@ -1,11 +1,11 @@
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyC8EWkrzXcSduYsjYCob6pmoH05z6Sui5U",
     authDomain: "auto-guide-1e2b6.firebaseapp.com",
-    databaseURL: "https://auto-guide-1e2b6-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "auto-guide-1e2b6",
     storageBucket: "auto-guide-1e2b6.appspot.com",
     messagingSenderId: "491542920394",
@@ -14,3 +14,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+export default db;

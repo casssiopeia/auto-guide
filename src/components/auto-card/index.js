@@ -4,7 +4,15 @@ import styles from "./index.module.css";
 import { BookmarkBorderOutlined } from "@mui/icons-material";
 import { BookmarkOutlined } from "@mui/icons-material";
 
-export const AutoCard = ({ picture, brand, model, year, price, engine, gearBox, bodyType, color, description, id, onCardClick }) => {
+export const AutoCard = ({ 
+    picture, 
+    brand, 
+    model, 
+    year, 
+    price, 
+    onCardClick, 
+    ...restProps 
+}) => {
 
     const [isBookmarked, setIsBookmarked] = useState(true);
 
@@ -14,24 +22,32 @@ export const AutoCard = ({ picture, brand, model, year, price, engine, gearBox, 
     }
 
     return (
-        <>
-            <div className={`${styles.card}`}>
-                <div onClick={() => onCardClick({picture, brand, model, year, price, engine, gearBox, bodyType, color, description, id})}>
-                    <img className={`${styles.img}`} src={picture} alt="" />
-                    <h2>{brand} {model}</h2>
-                    <p>{year} Год</p>
-                    <p>Средняя цена: {price} $</p>
-                </div>
-                <div className={`${styles.btnWrapper}`}>
-                    { isBookmarked ? (
-                    <BookmarkBorderOutlined style={{fontSize: 40}} className={`${styles.bookmark}`} onClick={toggleBookmark} />
-                    ) : (
-                    <BookmarkOutlined style={{fontSize: 40}} htmlColor="#fff566" className={`${styles.bookmark}`} onClick={toggleBookmark} /> 
-                    )}
-                    <Button />
-                </div>
+        <div className={styles.card}>
+            <div onClick={() => 
+                onCardClick({
+                        picture, 
+                        brand, 
+                        model, 
+                        year, 
+                        price, 
+                        ...restProps
+                    })
+                }
+            >
+                <img className={styles.img} src={picture} alt={model} />
+                <h2>{brand} {model}</h2>
+                <p>{year} Год</p>
+                <p>Средняя цена: {price} $</p>
             </div>
-        </>
+            <div className={styles.btnWrapper}>
+                { isBookmarked ? (
+                <BookmarkBorderOutlined style={{fontSize: 40}} className={styles.bookmark} onClick={toggleBookmark} />
+                ) : (
+                <BookmarkOutlined style={{fontSize: 40}} htmlColor="#fff566" className={styles.bookmark} onClick={toggleBookmark} /> 
+                )}
+                <Button />
+            </div>
+        </div>
     )
 }
 

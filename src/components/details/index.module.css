@@ -63,11 +63,11 @@ img {
     padding: 15px;
 }
 
-.infoH2 {
+.infoWrapper h2 {
     font-size: 40px;
 }
 
-.infoP {
+.infoWrapper p {
     font-size: 24px;
     margin-bottom: 10px;
     border: 1px solid lightgray;
@@ -75,6 +75,6 @@ img {
     padding: 5px;
 }
 
-.infoH3 {
+.infoWrapper h3 {
     font-size: 28px;
 }
