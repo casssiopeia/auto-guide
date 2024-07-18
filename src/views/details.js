@@ -3,27 +3,16 @@ import { Header } from "../components/header";
 import { Details } from "../components/details";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { getCarsFromState } from "../store/selectors";
+import { getCarByModel } from "../store/selectors";
 
 export const DetailsPage = () => {
+  const { model } = useParams();
+  const car = useSelector((state) => getCarByModel(state, model));
 
-    const { model } = useParams();
-    
-    const cars = useSelector(getCarsFromState);
-
-    const car = cars.find((car) => car.model === model);
-    console.log(car);
-
-    return (
-        <>
-            <Header />
-            {
-                car ? (
-                    <Details {...car} />
-                ) : (
-                    <div>CAR NOT FOUND</div>
-                )
-            }
-        </>
-    );
-}
+  return (
+    <>
+      <Header />
+      {car ? <Details {...car} /> : <div>CAR NOT FOUND</div>}
+    </>
+  );
+};
