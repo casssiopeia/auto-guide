@@ -26,6 +26,7 @@ export const Header = () => {
         <div className={styles.header}>
             <div className={styles.headerElems}>
             <h2 onClick={mainPageClicked}>Auto Guide</h2>
+            // TODO: Link
             <div className={styles.search}>
                 <Search />
             </div>

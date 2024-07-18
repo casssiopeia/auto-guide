@@ -17,9 +17,6 @@ export const Details = ({
     onClose
 }) => {
 
-    if (!isOpen) {
-        return null;
-    }
 
     return (
         <>

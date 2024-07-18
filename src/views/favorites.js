@@ -7,13 +7,20 @@ import { AutoCard } from "../components/auto-card";
 export const FavoritesPage = () => {
 
     const bookmarks = useSelector(getBookmarks);
+    const favoritesExist = Boolean(bookmarks.length);
+    
+    const carClicked = (car) => {
+        // setSelectedCar(car);
+        // setShowDetails(true);
+        navigate(`/details/${car.model}`);
+    }
 
     return(
         <>
             <Header />
-            {bookmarks.length > 0 ? (
+            { favoritesExist ? (
                 bookmarks.map(car => (
-                    <AutoCard key={car.id} {...car} />
+                    <AutoCard key={car.id} {...car} onClick={carClicked} />
                 ))
             ) : (
                 <p>No favorites yet.</p>
