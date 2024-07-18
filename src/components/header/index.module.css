@@ -18,6 +18,12 @@
 .headerElems h2 {
     font-size: 30px;
     color: white;
+    cursor: pointer;
+    transform: scale(1);
+}
+
+.headerElems h2:hover {
+    transform: scale(1.05);
 }
 
 .favorites {

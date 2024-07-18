@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-import { Header } from "./components/header";
-import { Catalog } from "./components/catalog";
+import { Router } from "./router";
 import { useDispatch } from "react-redux";
 import { getCars } from "./store/async-action";
 
@@ -9,13 +8,10 @@ export const App = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getCars);
+        dispatch(getCars());
     }, [dispatch]);
 
     return(
-        <>
-            <Header />
-            <Catalog />
-        </>
+        <Router />
     );
 }

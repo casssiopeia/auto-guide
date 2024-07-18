@@ -8,3 +8,4 @@ export const getCars = createAsyncThunk('getCars', async (payload, thunkApi) => 
 
     return thunkApi.fulfillWithValue(cars);
 });
+

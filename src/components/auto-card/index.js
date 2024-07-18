@@ -1,24 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Button } from "../button";
 import styles from "./index.module.css";
 import { BookmarkBorderOutlined } from "@mui/icons-material";
 import { BookmarkOutlined } from "@mui/icons-material";
+import { addBookmark, removeBookmark } from "../../store/bookmarkSlice";
+import { isBookmarked } from "../../store/selectors";
 
 export const AutoCard = ({ 
     picture, 
     brand, 
     model, 
     year, 
-    price, 
+    price,
+    id,
     onCardClick, 
     ...restProps 
 }) => {
 
-    const [isBookmarked, setIsBookmarked] = useState(true);
+    const dispatch = useDispatch();
+    const bookmarked = useSelector(state => isBookmarked(state, id));
 
     const toggleBookmark = () => {
 
-        setIsBookmarked((prev) => !prev);
+        if (bookmarked) {
+            dispatch(removeBookmark(id));
+        } else {
+            dispatch(addBookmark({ picture, brand, model, year, price, id, ...restProps }));
+        }
     }
 
     return (
@@ -40,11 +49,11 @@ export const AutoCard = ({
                 <p>Средняя цена: {price} $</p>
             </div>
             <div className={styles.btnWrapper}>
-                { isBookmarked ? (
-                <BookmarkBorderOutlined style={{fontSize: 40}} className={styles.bookmark} onClick={toggleBookmark} />
+                { bookmarked ? (
+                    <BookmarkOutlined style={{fontSize: 40}} htmlColor="#fff566" className={styles.bookmark} onClick={toggleBookmark} />
                 ) : (
-                <BookmarkOutlined style={{fontSize: 40}} htmlColor="#fff566" className={styles.bookmark} onClick={toggleBookmark} /> 
-                )}
+                    <BookmarkBorderOutlined style={{fontSize: 40}} className={styles.bookmark} onClick={toggleBookmark} />
+                ) }
                 <Button />
             </div>
         </div>
