@@ -15,24 +15,17 @@
     justify-content: space-between;
 }
 
-.headerElems h2 {
+.logo {
     font-size: 30px;
     color: white;
+    cursor: pointer;
+    transform: scale(1);
+    font-weight: 600;
+    text-decoration: none;
 }
 
-.search {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    color: white;
-}
-
-.search label {
-    font-size: 22px;
-    font-weight: 500;
-    margin-right: 15px;
-    margin-top: 3px;
-    margin-left: 70px;
+.headerElems h2:hover {
+    transform: scale(1.05);
 }
 
 .favorites {

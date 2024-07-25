@@ -10,7 +10,9 @@
 
 .searchField {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    color: white;
 }
 
 .search {
@@ -21,4 +23,12 @@
 
 .search:hover {
     transform: scale(1.1);
+}
+
+.searchField label {
+    font-size: 22px;
+    font-weight: 500;
+    margin-right: 15px;
+    margin-top: 3px;
+    margin-left: 70px;
 }
