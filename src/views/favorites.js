@@ -6,7 +6,7 @@ export const FavoritesPage = () => {
 
     return(
         <>
-            <Header />
+         
             <Favorites />
         </>
     );

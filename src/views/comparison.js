@@ -6,7 +6,6 @@ export const ComparisonPage = () => {
 
     return (
         <>
-            <Header />
             <Comparison />
         </>
     );
