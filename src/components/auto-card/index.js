@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../button";
 import styles from "./index.module.css";
 import { BookmarkBorderOutlined } from "@mui/icons-material";
@@ -14,9 +15,10 @@ export const AutoCard = ({
     year, 
     price,
     id,
-    onCardClick, 
     ...restProps 
 }) => {
+
+    const navigate = useNavigate();
 
     const dispatch = useDispatch();
     const bookmarked = useSelector(state => isBookmarked(state, id));
@@ -30,18 +32,13 @@ export const AutoCard = ({
         }
     }
 
+    const cardClicked = () => {
+        navigate(`/details/${model}`);
+    }
+
     return (
         <div className={styles.card}>
-            <div onClick={() => 
-                onCardClick({
-                        picture, 
-                        brand, 
-                        model, 
-                        year, 
-                        price, 
-                        ...restProps
-                    })
-                }
+            <div onClick={cardClicked}
             >
                 <img className={styles.img} src={picture} alt={model} />
                 <h2>{brand} {model}</h2>

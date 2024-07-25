@@ -1,13 +1,11 @@
 import React from "react";
 import { Header } from "../components/header";
-import { Favorites } from "../components/favorites";
 
-export const FavoritesPage = () => {
+export const SearchPage = () => {
 
-    return(
+    return (
         <>
             <Header />
-            <Favorites />
         </>
     );
 }

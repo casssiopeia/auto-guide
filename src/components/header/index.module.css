@@ -15,11 +15,13 @@
     justify-content: space-between;
 }
 
-.headerElems h2 {
+.logo {
     font-size: 30px;
     color: white;
     cursor: pointer;
     transform: scale(1);
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .headerElems h2:hover {

@@ -13,17 +13,11 @@ export const Details = ({
     description, 
     price, 
     id, 
-    isOpen, 
     onClose
 }) => {
 
-    if (!isOpen) {
-        return null;
-    }
-
     return (
         <>
-            <div className={styles.overlay}></div>
             <div className={styles.details}>
                 <div className={styles.close}>
                     <h3>Подробная мнформация о {brand} {model} {year}</h3>
