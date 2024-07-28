@@ -1,0 +1,25 @@
+.wrapper {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    width: 1120px;
+    margin: 0px auto;
+    background-color: white;
+    padding: 30px;
+}
+
+.foundElems {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+.empty {
+    font-size: 30px;
+    font-weight: 600;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

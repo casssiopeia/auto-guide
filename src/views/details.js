@@ -1,5 +1,4 @@
 import React from "react";
-import { Header } from "../components/header";
 import { Details } from "../components/details";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -13,7 +12,6 @@ export const DetailsPage = () => {
 
     return (
         <>
-            <Header />
             { car ? (<Details {...car} />) : (<div>CAR NOT FOUND</div>) }
         </>
     );
