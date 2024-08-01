@@ -7,6 +7,7 @@ import { BookmarkBorderOutlined } from "@mui/icons-material";
 import { BookmarkOutlined } from "@mui/icons-material";
 import { addBookmark, removeBookmark } from "../../store/bookmarkSlice";
 import { isBookmarked } from "../../store/selectors";
+import { isCarInCompare } from "../../store/selectors";
 
 export const AutoCard = ({ 
     picture, 
@@ -14,28 +15,29 @@ export const AutoCard = ({
     model, 
     year, 
     price,
+    engine,
     id,
     ...restProps 
 }) => {
 
     const navigate = useNavigate();
-
     const dispatch = useDispatch();
     const bookmarked = useSelector(state => isBookmarked(state, id));
+    const compared = useSelector(state => isCarInCompare(state, id));
 
     const toggleBookmark = () => {
 
         if (bookmarked) {
             dispatch(removeBookmark(id));
         } else {
-            dispatch(addBookmark({ picture, brand, model, year, price, id, ...restProps }));
+            dispatch(addBookmark({ picture, brand, model, year, price, engine, id, ...restProps }));
         }
     }
 
     const cardClicked = () => {
         navigate(`/details/${model}`);
     }
-
+    
     return (
         <div className={styles.card}>
             <div onClick={cardClicked}
@@ -51,7 +53,7 @@ export const AutoCard = ({
                 ) : (
                     <BookmarkBorderOutlined style={{fontSize: 40}} className={styles.bookmark} onClick={toggleBookmark} />
                 ) }
-                <Button />
+                <Button car={{ picture, brand, model, year, price, engine, id, ...restProps }} isCarInCompare={compared} />
             </div>
         </div>
     )

@@ -24,7 +24,7 @@ export const Found = () => {
         <div className={styles.wrapper}>
             <div className={styles.foundElems}>
                 {filteredCars.length > 0 ? (
-                    (filteredCars.map(car => (<AutoCard {...car} />)))
+                    (filteredCars.map(car => (<AutoCard key={car.id} {...car} />)))
                 ) : (
                     <div className={styles.empty}>Совпадений не найдено</div>
                 )}

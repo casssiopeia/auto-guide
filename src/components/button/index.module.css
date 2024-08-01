@@ -13,3 +13,19 @@
 .addButton:hover {
     transform: scale(1.1);
 }
+
+.removeButton {
+    width: 110px;
+    background-color: #f44e45;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid rgb(222, 51, 51);
+    border-radius: 10px;
+    cursor: pointer;
+    transform: scale(1);
+}
+
+.removeButton:hover {
+    transform: scale(1.1);
+}
