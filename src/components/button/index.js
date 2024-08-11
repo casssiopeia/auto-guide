@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addCarToCompare, removeCarFromCompare } from "../../store/comparedCarsSlice";
+import { CompareArrows } from "@mui/icons-material";
 import styles from "./index.module.css";
 
 export const Button = ({ car, isCarInCompare }) => {
@@ -20,9 +21,9 @@ export const Button = ({ car, isCarInCompare }) => {
     return (
         <>
             {isCarInCompare ? (
-                <button onClick={handleRemove} className={styles.removeButton} >Удалить</button>
+                <CompareArrows onClick={handleRemove} style={{ fontSize: 45 }} className={styles.removeButton} />
             ) : (
-                <button onClick={handleAdd} className={styles.addButton}>Сравнить</button>
+                <CompareArrows onClick={handleAdd} style={{ fontSize: 45 }} className={styles.addButton} />
             )}
         </>
     );

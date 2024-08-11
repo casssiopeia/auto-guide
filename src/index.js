@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from './App';
+import { Warning } from './components/warning';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import { BrowserRouter } from 'react-router-dom';
@@ -11,6 +12,7 @@ root.render(
     <Provider store={store}>
         <BrowserRouter>
             <App />
+            <Warning />
         </BrowserRouter>
     </Provider>
 );

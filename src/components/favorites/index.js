@@ -6,7 +6,7 @@ import styles from "./index.module.css";
 
 export const Favorites = () => {
 
-    const bookmarks = useSelector(getBookmarks);
+    const bookmarks = useSelector(state => getBookmarks(state));
 
     return (
         <div className={styles.wrapper}>

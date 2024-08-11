@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { getBookmarks } from "../../store/selectors";
+import { getCarsToCompare } from "../../store/selectors";
 import { Search } from "../search";
 import { CompareArrowsOutlined } from "@mui/icons-material";
 import { BookmarksOutlined } from "@mui/icons-material";
@@ -7,6 +10,9 @@ import { Comparison } from "../comparison";
 import styles from "./index.module.css";
 
 export const Header = () => {
+
+    const bookmarks = useSelector(state => getBookmarks(state));
+    const carsToCompare = useSelector(state => getCarsToCompare(state));
 
     const [showComparison, setShowComparison] = useState(false);
 
@@ -32,16 +38,21 @@ export const Header = () => {
                     <Search />
                 </div>
                 <Link to="/favorites">
-                    <BookmarksOutlined
-                        style={{ fontSize: 32 }}
-                        className={styles.favorites}
-                    />
+                    <div className={styles.iconWrapper}>
+                        <BookmarksOutlined
+                            style={{ fontSize: 32 }}
+                            className={styles.favorites}
+                        />
+                        <span className={styles.count}>{bookmarks.length}</span>
+                    </div>
                 </Link>
-                <CompareArrowsOutlined
-                    style={{ fontSize: 32 }}
-                    className={styles.compare}
-                    onClick={compBtnOnClick}
-                />
+                <div className={styles.iconWrapper} onClick={compBtnOnClick}>
+                    <CompareArrowsOutlined
+                        style={{ fontSize: 32 }}
+                        className={styles.compare}
+                    />
+                    <span className={styles.count}>{carsToCompare.length}</span>
+                </div>
             </div>
         </div>
         </>

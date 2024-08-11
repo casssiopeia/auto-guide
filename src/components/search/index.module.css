@@ -1,7 +1,7 @@
 .searchField input {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    border: 3px solid lightgrey;
+    border: 2px solid lightgrey;
     border-radius: 10px;
     padding: 5px;
     font-size: 16px;
@@ -31,4 +31,20 @@
     margin-right: 15px;
     margin-top: 3px;
     margin-left: 70px;
+}
+
+@media (max-width: 768px) {
+    .searchField input {
+        padding: 5px;
+        font-size: 16px;
+        width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .searchField input {
+        padding: 5px;
+        font-size: 16px;
+        width: 200px;
+    }
 }

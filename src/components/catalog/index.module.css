@@ -3,12 +3,39 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 35px;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 .wrapper {
     width: 1120px;
     margin: 0 auto;
-    background-color: white;
+    background-color: rgb(236, 236, 236);
     padding: 30px;
+}
+
+@media (max-width: 1024px) {
+    .wrapper {
+        width: 1000px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        width: 720px;
+        padding: 10px;
+    }
+
+    .catalog {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        width: 440px;
+    }
+
+    .catalog {
+        gap: 15px;
+    }
 }

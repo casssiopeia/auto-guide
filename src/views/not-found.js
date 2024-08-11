@@ -1,10 +1,11 @@
 import React from "react";
+import { PageNotFound } from "../components/page-not-found";
 
-export const NotFound = () => {
+export const NotFoundPage = () => {
 
     return (
         <div>
-            NOT FOUND 404
+            <PageNotFound />
         </div>
     );
 }

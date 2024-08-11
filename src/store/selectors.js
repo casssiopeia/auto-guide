@@ -2,8 +2,8 @@ export const getCarsFromState = (state) => {
     return state.cars.cars;
 }
 
-export const getCarByModel = (state, model) => {
-    return state.cars.cars.find((car) => car.model === model);
+export const getCarByModelAndYear = (state, model, year) => {
+    return state.cars.cars.find((car) => car.model === model && car.year === year);
 }
 
 export const getBookmarks = (state) => {

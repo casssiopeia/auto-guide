@@ -9,3 +9,7 @@
     box-sizing: border-box;
     transition: 0.5s;
 }
+
+body {
+    background-color: rgb(236, 236, 236);
+}

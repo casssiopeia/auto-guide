@@ -35,21 +35,21 @@ export const AutoCard = ({
     }
 
     const cardClicked = () => {
-        navigate(`/details/${model}`);
+        navigate(`/details/${model}/${year}`);
     }
     
     return (
         <div className={styles.card}>
-            <div onClick={cardClicked}
-            >
+            <div onClick={cardClicked}>
                 <img className={styles.img} src={picture} alt={model} />
                 <h2>{brand} {model}</h2>
                 <p>{year} Год</p>
+                <p>Объём двигателя: {engine} л</p>
                 <p>Средняя цена: {price} $</p>
             </div>
             <div className={styles.btnWrapper}>
                 { bookmarked ? (
-                    <BookmarkOutlined style={{fontSize: 40}} htmlColor="#fff566" className={styles.bookmark} onClick={toggleBookmark} />
+                    <BookmarkOutlined style={{fontSize: 40}} htmlColor="#fff008" className={styles.bookmark} onClick={toggleBookmark} />
                 ) : (
                     <BookmarkBorderOutlined style={{fontSize: 40}} className={styles.bookmark} onClick={toggleBookmark} />
                 ) }
@@ -58,5 +58,3 @@ export const AutoCard = ({
         </div>
     )
 }
-
-// TODO: Добавить оценку

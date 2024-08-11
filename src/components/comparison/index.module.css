@@ -85,20 +85,31 @@
 
 .carInfo {
     padding: 10px;
-    border: 2px solid lightgray;
     border-radius: 15px;
+    margin-left: 30px;
 }
 
 .carInfo h2 {
-    font-size: 32px;
+    font-size: 26px;
     margin-bottom: 10px;
 }
 
 .carInfo p {
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
 .carInfo h3 {
-    font-size: 24px;
+    font-size: 22px;
+}
+
+.ratingWrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.ratingStarsWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
 }

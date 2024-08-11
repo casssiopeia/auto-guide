@@ -1,10 +1,34 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { getBestCar } from "../../utils/comparator";
 import { getCarsToCompare } from "../../store/selectors";
 import { CompareArrows } from "@mui/icons-material";
 import { Close } from "@mui/icons-material";
 import { RatingStar } from "../ratingStar";
 import styles from "./index.module.css";
+
+const COMPARSION_CONFIG = [
+    {
+        kind: "engine",
+        comparatorType: "biggerBetter",
+    },
+    {
+        kind: "year",
+        comparatorType: "biggerBetter",
+    },
+    {
+        kind: "price",
+        comparatorType: "lowerBetter",
+    },
+    {
+        kind: "tankValue",
+        comparatorType: "biggerBetter",
+    },
+    {
+        kind: "consumption",
+        comparatorType: "lowerBetter",
+    }
+];
 
 export const Comparison = ({ isOpen, onClose }) => {
 
@@ -33,16 +57,9 @@ export const Comparison = ({ isOpen, onClose }) => {
         );
     }
 
-    const getBestCar = (cars, key, comparator) => {
-
-        return cars.reduce((bestCar, currentCar) => {
-            return comparator(currentCar[key], bestCar[key]) ? currentCar : bestCar;
-        }, cars[0]);
-    }
-
-    const bestVolumeCar = getBestCar(carsToCompare, "engine", (a, b) => a > b);
-    const bestYearCar = getBestCar(carsToCompare, "year", (a, b) => a > b);
-    const bestPriceCar = getBestCar(carsToCompare, "price", (a, b) => a < b);
+    const bestCarsIds = COMPARSION_CONFIG.map(({kind, comparatorType}) => {
+        return getBestCar(carsToCompare, kind, comparatorType);
+    });
 
     return (
         <>
@@ -56,19 +73,22 @@ export const Comparison = ({ isOpen, onClose }) => {
                 <div className={styles.comparedCars}>
                     {carsToCompare.map(car => (
                         <div key={car.id} className={styles.carItem}>
-                            {car.id === bestVolumeCar.id && <RatingStar />}
-                            {car.id === bestYearCar.id && <RatingStar />}
-                            {car.id === bestPriceCar.id && <RatingStar />}
-                            <div className={styles.carImg}>
-                                <img src={car.picture} alt="" />
+                            <div className={styles.ratingWrapper}>
+                                <div className={styles.ratingStarsWrapper}>
+                                    {bestCarsIds.filter(({id}) => car.id === id).map(() => {
+                                        return <RatingStar/>;
+                                    })}
+                                </div>
+                                <div className={styles.carImg}>
+                                    <img src={car.picture} alt="" />
+                                </div>
                             </div>
                             <div className={styles.carInfo}>
                                 <h2>{car.brand} {car.model}</h2>
                                 <p>Модель <strong>{car.year} года</strong> выпуска.</p>
-                                <p><strong>Тип кузова:</strong> {car.bodyType}.</p>
-                                <p><strong>Коробка переключения передач:</strong> {car.gearBox}.</p>
+                                <p><strong>Объём бака:</strong> {car.tankValue} л.</p>
                                 <p><strong>Объём двигателя:</strong> {car.engine} л.</p>
-                                <p><strong>Параметры:</strong> {car.description}.</p>
+                                <p><strong>Расход топлива:</strong> {car.consumption} л/100 км.</p>
                                 <h3>Средняя цена: {car.price} $</h3>
                             </div>
                         </div>
@@ -78,3 +98,5 @@ export const Comparison = ({ isOpen, onClose }) => {
         </>
     );
 }
+
+// Модалка
