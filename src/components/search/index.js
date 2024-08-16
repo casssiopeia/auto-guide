@@ -50,7 +50,7 @@ export const Search = () => {
                     type="text" 
                     placeholder="Введите бренд" 
                     value={query}
-                    onChange={(e) => setQuery(e.target.value)}
+                    onChange={(event) => setQuery(event.target.value)}
                 />
                 <SearchOutlined 
                     className={`${styles.search}`} 
