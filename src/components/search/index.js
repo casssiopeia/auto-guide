@@ -12,6 +12,7 @@ export const Search = () => {
     const handleSearch = useCallback(() => {
 
         if (query.trim()) {
+
             navigate(`/search?brand=${query}`);
 
             setQuery("");
@@ -38,7 +39,7 @@ export const Search = () => {
                 inputElement.removeEventListener("kewdown", handleKeyDown);
             }
         }
-    }, [query, handleSearch]);
+    }, [handleSearch]);
 
     return (
         <>

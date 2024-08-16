@@ -1,10 +1,12 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { Tooltip } from "react-tooltip";
 import { getBestCar } from "../../utils/comparator";
 import { getCarsToCompare } from "../../store/selectors";
 import { CompareArrows } from "@mui/icons-material";
-import { Close } from "@mui/icons-material";
+import { Close, Delete } from "@mui/icons-material";
 import { RatingStar } from "../ratingStar";
+import { clearCarsToCompare } from "../../store/comparedCarsSlice";
 import styles from "./index.module.css";
 
 const COMPARSION_CONFIG = [
@@ -32,10 +34,17 @@ const COMPARSION_CONFIG = [
 
 export const Comparison = ({ isOpen, onClose }) => {
 
+    const dispatch = useDispatch();
+
     const carsToCompare = useSelector(state => getCarsToCompare(state));
 
     if (!isOpen) {
         return null;
+    }
+
+    const handleClear = () => {
+
+        dispatch(clearCarsToCompare());
     }
 
     if (carsToCompare.length < 2) {
@@ -76,7 +85,7 @@ export const Comparison = ({ isOpen, onClose }) => {
                             <div className={styles.ratingWrapper}>
                                 <div className={styles.ratingStarsWrapper}>
                                     {bestCarsIds.filter(({id}) => car.id === id).map(() => {
-                                        return <RatingStar/>;
+                                        return <RatingStar />;
                                     })}
                                 </div>
                                 <div className={styles.carImg}>
@@ -87,16 +96,23 @@ export const Comparison = ({ isOpen, onClose }) => {
                                 <h2>{car.brand} {car.model}</h2>
                                 <p>Модель <strong>{car.year} года</strong> выпуска.</p>
                                 <p><strong>Объём бака:</strong> {car.tankValue} л.</p>
-                                <p><strong>Объём двигателя:</strong> {car.engine} л.</p>
-                                <p><strong>Расход топлива:</strong> {car.consumption} л/100 км.</p>
+                                <p><strong>Объём двигателя:</strong> {car.engine.toFixed(1)} л.</p>
+                                <p><strong>Расход топлива:</strong> {car.consumption.toFixed(1)} л/100 км.</p>
                                 <h3>Средняя цена: {car.price} $</h3>
                             </div>
                         </div>
                     ))}
                 </div>
+                <Tooltip id="clear" />
+                <Delete
+                    data-tooltip-id="clear" 
+                    data-tooltip-content="Очистить сравнение" 
+                    data-tooltip-place="top"
+                    onClick={handleClear}
+                    style={{ fontSize: 40 }}
+                    className={styles.deleteBtn}
+                />
             </div>
         </>
     );
 }
-
-// Модалка

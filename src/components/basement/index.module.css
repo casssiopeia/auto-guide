@@ -2,7 +2,9 @@
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     width: 100%;
-    height: 300px;
+    height: auto;
+    padding: 30px;
+    margin-top: 20px;
     background-color: #3f95fd;
     color: white;
     bottom: 0;

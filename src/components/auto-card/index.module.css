@@ -30,6 +30,7 @@
     font-size: 26px;
     padding-top: 10px;
     margin-bottom: 10px;
+    border-top: 1px solid gray;
 }
 
 .card p {
@@ -54,14 +55,20 @@
     margin-top: 8px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .card {
         flex: 0 1 48%;
     }
 }
 
+@media (max-width: 662px) {
+    .card {
+        flex: 90%;
+    }
+}
+
 @media (max-width: 480px) {
     .card {
-        flex: 0 1 100%;
+        flex: 0 1 95%;
     }
 }

@@ -1,12 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { getCarsFromState } from "../../store/selectors";
-import { FilterAlt } from "@mui/icons-material";
+import React, { useState, useEffect, useCallback } from "react";
 import styles from "./index.module.css";
 
-export const Filters = ({ onFilter }) => {
-
-    const cars = useSelector(getCarsFromState);
+export const Filters = ({ cars, onFilter }) => {
 
     const [priceOrder, setPriceOrder] = useState("");
     const [selectedYear, setSelectedYear] = useState("");
@@ -14,20 +9,6 @@ export const Filters = ({ onFilter }) => {
 
     const [years, setYears] = useState([]);
     const [volumes, setVolumes] = useState([]);
-
-    // const years = [];
-
-    // for (let year = 2000; year <= 2024; year++) {
-
-    //     years.push(year);
-    // }
-
-    // const volumes = [];
-
-    // for (let volume = 1.6; volume <= 7.0; volume += 0.1) {
-
-    //     volumes.push(volume.toFixed(1));
-    // }
 
     useEffect(() => {
 
@@ -37,6 +18,35 @@ export const Filters = ({ onFilter }) => {
         setYears(uniqueYears);
         setVolumes(uniqueVolumes);
     }, [cars]);
+
+    const filterCars = useCallback(() => {
+
+        let filtered = cars.filter(car => {
+
+            return (
+                (
+                    selectedYear === "" || 
+                    selectedYear === car.year.toString()
+                ) &&
+                (
+                    selectedVolume === "" ||
+                    selectedVolume === car.engine.toString()
+                )
+            );
+        });
+
+        if (priceOrder === "asc") {
+            filtered.sort((a, b) => a.price - b.price);
+        } else if (priceOrder === "desc") {
+            filtered.sort((a, b) => b.price - a.price);
+        }
+
+        onFilter(filtered);
+    }, [cars, priceOrder, selectedYear, selectedVolume, onFilter]);
+
+    useEffect(() => {
+        filterCars();
+    }, [filterCars]);
 
     const handlePriceChange = (event) => {
         setPriceOrder(event.target.value);
@@ -48,10 +58,6 @@ export const Filters = ({ onFilter }) => {
 
     const handleVolumeChange = (event) => {
         setSelectedVolume(event.target.value);
-    }
-
-    const handleFilterClick = () => {
-        onFilter({ priceOrder, selectedYear, selectedVolume });
     }
 
     return (
@@ -89,11 +95,10 @@ export const Filters = ({ onFilter }) => {
                     >
                         <option value=""></option>
                         {volumes.map(volume => (
-                            <option key={volume} value={volume}>{volume}</option>
+                            <option key={volume} value={volume}>{volume.toFixed(1)}</option>
                         ))}
                     </select>
                 </div>
-                <FilterAlt className={styles.filterButton} onClick={handleFilterClick} style={{ fontSize: 45 }} />
             </div>
         </div>
     );

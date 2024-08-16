@@ -1,24 +1,28 @@
 .details {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    width: 1120px;
+    width: 100%;
+    max-width: 1120px;
     margin: 0 auto;
+    padding: 0 10px;
 }
 
 .imgWrapper {
-    margin-top: 60px;
     display: flex;
-    justify-content: center;
+    width: 99%;
 }
 
-img {
+.imgWrapper img {
+    margin-top: 90px;
     width: 70%;
-    border: 3px solid lightgray;
     border-radius: 20px;
 }
 
 .infoWrapper {
     padding: 15px;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-top: 10px;
 }
 
 .infoWrapper h2 {
@@ -41,7 +45,6 @@ img {
 .bookmark {
     transform: scale(1);
     cursor: pointer;
-    margin-bottom: 50px;
 }
 
 .bookmark:hover {
@@ -57,51 +60,77 @@ img {
 .buttons {
     display: flex;
     flex-direction: column;
-    margin-top: 80px;
+    margin-top: 100px;
     margin-left: -140px;
 }
 
-@media (max-width: 1024px) {
-    .details {
-        width: 1000px;
+.tooltip {
+    z-index: 1003;
+}
+
+@media (max-width: 900px) {
+    .imgWrapper {
+        margin-top: 50px;
+    }
+
+    .buttons {
+        margin-top: 140px;
     }
 }
 
 @media (max-width: 768px) {
     .details {
-        width: 720px;
+        max-width: 720px;
         padding: 10px;
     }
 
-    img {
-        width: 60%;
+    .imgAndButtons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imgWrapper img {
+        width: 95%;
+    }
+
+    .buttons {
+        margin-top: 20px;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 580px) {
+    .imgWrapper {
+        margin-top: 80px;
+    }
+
+    .buttons {
+        margin-top: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .details {
-        width: 440px;
+        max-width: 440px;
     }
 
-    img {
-        width: 80%;
+    .imgWrapper img {
+        width: 100%;
     }
-    
+
     .imgAndButtons {
-        display: flex;
         flex-direction: column;
         margin-top: 60px;
     }
 
     .buttons {
-        display: flex;
         flex-direction: row;
-        margin-left: 0;
-        margin-top: 20px;
         justify-content: space-evenly;
     }
 
     .infoWrapper h2 {
-        margin-top: -35px;
+        margin-top: 0;
     }
 }

@@ -13,7 +13,7 @@ export const Favorites = () => {
             <div className={styles.favoritesElem}>
                 {bookmarks.length > 0 ? (
                     bookmarks.map(car => (
-                        <AutoCard {...car} />
+                        <AutoCard key={car.id} {...car} />
                     ))
                 ) : (
                     <p className={styles.empty}>Список пуст.</p>

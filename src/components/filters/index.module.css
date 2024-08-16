@@ -23,7 +23,7 @@
 }
 
 .indicator select {
-    width: 150px;
+    width: 200px;
     height: 30px;
     font-size: 15px;
     margin-left: 10px;
@@ -46,15 +46,34 @@
     color: #2386ff;
 }
 
+@media (max-width: 900px) {
+    .filterFieldWrapper {
+        margin-top: 120px;
+    }
+}
+
 @media (max-width: 768px) {
     .filterFieldWrapper {
-        margin: 80px 8px 0 8px;
+        margin: 140px 8px 0 8px;
+    }
+}
+
+@media (max-width: 720px) {
+    .indicator select {
+        width: 120px;
+    }
+    
+}
+
+@media (max-width: 580px) {
+    .filterFieldWrapper {
+        margin: 170px 8px 0 8px;
     }
 }
 
 @media (max-width: 480px) {
     .filterFieldWrapper {
-        margin: 115px 8px 0 8px;
+        margin: 180px 8px 0 8px;
     }
     
     .filterField {

@@ -34,24 +34,28 @@ export const Header = () => {
         <div className={styles.header}>
             <div className={styles.headerElems}>
                 <Link to="/" className={styles.logo}>Auto Guide</Link>
-                <div className={styles.search}>
-                    <Search />
-                </div>
-                <Link to="/favorites">
-                    <div className={styles.iconWrapper}>
-                        <BookmarksOutlined
-                            style={{ fontSize: 32 }}
-                            className={styles.favorites}
-                        />
-                        <span className={styles.count}>{bookmarks.length}</span>
+                <div className={styles.searchBtnWrapper}>
+                    <div className={styles.search}>
+                        <Search />
                     </div>
-                </Link>
-                <div className={styles.iconWrapper} onClick={compBtnOnClick}>
-                    <CompareArrowsOutlined
-                        style={{ fontSize: 32 }}
-                        className={styles.compare}
-                    />
-                    <span className={styles.count}>{carsToCompare.length}</span>
+                    <div className={styles.iconsWrapper}>
+                        <Link to="/favorites">
+                            <div className={styles.iconWrapper}>
+                                <BookmarksOutlined
+                                    style={{ fontSize: 32 }}
+                                    className={styles.favorites}
+                                />
+                                <span className={styles.count}>{bookmarks.length}</span>
+                            </div>
+                        </Link>
+                        <div className={styles.iconWrapper} onClick={compBtnOnClick}>
+                            <CompareArrowsOutlined
+                                style={{ fontSize: 32 }}
+                                className={styles.compare}
+                            />
+                            <span className={styles.count}>{carsToCompare.length}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

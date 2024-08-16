@@ -19,11 +19,14 @@ const comparedCarsSlice = createSlice({
         removeCarFromCompare: (state, action) => {
             state.items = state.items.filter(item => item.id !== action.payload);
         },
+        clearCarsToCompare: (state) => {
+            state.items = [];
+        },
         closeModal: (state) => {
             state.showModal = false;
         },
     }
 });
 
-export const { addCarToCompare, removeCarFromCompare, closeModal } = comparedCarsSlice.actions;
+export const { addCarToCompare, removeCarFromCompare, closeModal, clearCarsToCompare } = comparedCarsSlice.actions;
 export default comparedCarsSlice.reducer;

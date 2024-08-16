@@ -13,6 +13,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
@@ -22,6 +23,10 @@
     transform: scale(1);
     font-weight: 600;
     text-decoration: none;
+}
+
+.searchBtnWrapper {
+    display: contents;
 }
 
 .headerElems h2:hover {
@@ -48,6 +53,10 @@
     transform: scale(1.05);
 }
 
+.iconsWrapper {
+    display: contents;
+}
+
 .iconWrapper {
     position: relative;
     display: inline-block;
@@ -57,17 +66,64 @@
     position: absolute;
     top: -10px;
     right: -10px;
-    background-color: rgb(241, 74, 74);
+    background-color: rgb(237, 78, 78);
     color: white;
     border-radius: 50%;
     padding: 3px 7px;
     font-size: 12px;
 }
 
+@media (max-width: 900px) {
+    .header {
+        height: auto;
+        padding: 15px;
+    }
+
+    .headerElems {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .searchBtnWrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .iconWrapper {
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+}
+
 @media (max-width: 768px) {
     .header {
         height: auto;
         padding: 20px;
+    }
+}
+
+@media (max-width: 670px) {
+    .iconsWrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .iconWrapper {
+        margin: 0 20px 0 20px;
+    }
+}
+
+@media (max-width: 580px) {
+    .header {
+        padding: 10px;
+    }
+
+    .searchBtnWrapper {
+        display: flex;
+        flex-direction: column;
     }
 }
 

@@ -20,7 +20,7 @@
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
     border-radius: 20px;
     width: calc(100vw - 70vw);
-    height: calc(100vh - 70vh);
+    height: calc(100vh - 80vh);
     overflow-y: auto;
     z-index: 1000;
 }
@@ -66,4 +66,17 @@
 
 .main p {
     font-size: 24px;
+}
+
+@media (max-width: 768px) {
+    .warning {
+        width: calc(100vw - 50vw);
+    }
+}
+
+@media (max-width: 570px) {
+    .warning {
+        padding: 10px;
+        width: calc(100vw - 30vw);
+    }
 }
