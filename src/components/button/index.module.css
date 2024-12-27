@@ -1,0 +1,20 @@
+.addButton {
+    cursor: pointer;
+    margin-right: 10px;
+    transform: scale(1);
+}
+
+.addButton:hover {
+    transform: scale(1.1);
+}
+
+.removeButton {
+    cursor: pointer;
+    margin-right: 10px;
+    color: #3f95fd;
+    transform: scale(1);
+}
+
+.removeButton:hover {
+    transform: scale(1.1);
+}

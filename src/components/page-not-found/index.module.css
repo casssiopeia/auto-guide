@@ -1,0 +1,42 @@
+.notFoundWrapper {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.emoji {
+    color: #838a94;
+    margin-top: 70px;
+}
+
+.notFoundWrapper h2 {
+    font-weight: 600;
+    font-size: 130px;
+    color: #838a94;
+}
+
+.notFoundWrapper p {
+    font-size: 24px;
+    color: #585e66;
+}
+
+.link {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #585e66;
+    border: 3px solid #838a94;
+    border-radius: 10px;
+    padding: 6px;
+    text-decoration: none;
+    transform: scale(1);
+}
+
+.link:hover {
+    transform: scale(1.1);
+    color: rgb(236, 236, 236);
+    background-color: #838a94;
+}

@@ -1,0 +1,49 @@
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.wrapper {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    max-width: 1290px;
+    margin: 0 auto;
+    background-color: rgb(236, 236, 236);
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+    .catalog {
+        gap: 25px;
+    }
+    .wrapper {
+        max-width: 1000px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        max-width: 720px;
+        padding: 10px;
+    }
+
+    .catalog {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        max-width: 440px;
+    }
+
+    .catalog {
+        gap: 15px;
+    }
+}

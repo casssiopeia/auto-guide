@@ -1,0 +1,136 @@
+.details {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.imgWrapper {
+    display: flex;
+    width: 100%;
+}
+
+.imgWrapper img {
+    margin-top: 90px;
+    width: 65%;
+    border-radius: 20px;
+}
+
+.infoWrapper {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.infoWrapper h2 {
+    font-size: 28px;
+    text-align: center;
+}
+
+.infoWrapper p {
+    font-size: 20px;
+    margin: 0 10px 10px 20px;
+    border-radius: 5px;
+    padding: 7px;
+}
+
+.infoWrapper h3 {
+    font-size: 30px;
+    margin-left: 30px;
+}
+
+.bookmark {
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.bookmark:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.imgAndButtons {
+    display: flex;
+    flex-direction: row;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: -140px;
+}
+
+.tooltip {
+    z-index: 1003;
+}
+
+@media (max-width: 900px) {
+    .imgWrapper {
+        margin-top: 50px;
+    }
+
+    .buttons {
+        margin-top: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .details {
+        max-width: 720px;
+        padding: 10px;
+    }
+
+    .imgAndButtons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imgWrapper img {
+        width: 95%;
+    }
+
+    .buttons {
+        margin-top: 20px;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 580px) {
+    .imgWrapper {
+        margin-top: 80px;
+    }
+
+    .buttons {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .details {
+        max-width: 440px;
+    }
+
+    .imgWrapper img {
+        width: 100%;
+    }
+
+    .imgAndButtons {
+        flex-direction: column;
+        margin-top: 60px;
+    }
+
+    .buttons {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .infoWrapper h2 {
+        margin-top: 0;
+    }
+}

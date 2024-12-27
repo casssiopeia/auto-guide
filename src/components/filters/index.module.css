@@ -1,0 +1,93 @@
+.filterFieldWrapper {
+    font-family: "Roboto", sans-serif;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 50px 8px 0 8px;
+}
+
+.filterField {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.fieldName {
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.indicator label {
+    font-size: 16px;
+}
+
+.indicator select {
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    margin-left: 10px;
+    border: 2px solid lightgray;
+    border-radius: 7px;
+}
+
+.indicator select option {
+    font-size: 15px;
+}
+
+.filterButton {
+    cursor: pointer;
+    margin-top: -8px;
+    transform: scale(1);
+}
+
+.filterButton:hover {
+    transform: scale(1.1);
+    color: #2386ff;
+}
+
+@media (max-width: 900px) {
+    .filterFieldWrapper {
+        margin-top: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filterFieldWrapper {
+        margin: 140px 8px 0 8px;
+    }
+}
+
+@media (max-width: 720px) {
+    .indicator select {
+        width: 120px;
+    }
+    
+}
+
+@media (max-width: 580px) {
+    .filterFieldWrapper {
+        margin: 170px 8px 0 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .filterFieldWrapper {
+        margin: 180px 8px 0 8px;
+    }
+    
+    .filterField {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .indicator select {
+        width: 95%;
+        margin-bottom: 10px;
+    }
+    
+    .filterButton {
+        margin-top: 10px;
+    }
+}

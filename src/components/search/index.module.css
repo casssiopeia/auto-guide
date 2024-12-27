@@ -1,0 +1,69 @@
+.searchField input {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 14px;
+    width: 400px;
+}
+
+.searchField {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: white;
+}
+
+.search {
+    margin-left: 13px;
+    margin-top: 3px;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.search:hover {
+    transform: scale(1.1);
+}
+
+.searchField label {
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 15px;
+    margin-top: 3px;
+    margin-left: 70px;
+}
+
+@media (max-width: 900px) {
+    .searchField {
+        margin-top: 20px;
+    }
+
+    .searchField input {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .searchField input {
+        padding: 5px;
+        font-size: 16px;
+        width: 250px;
+    }
+
+    .searchField label {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .searchField {
+        margin-left: 50px;
+    }
+
+    .searchField input {
+        padding: 5px;
+        font-size: 16px;
+        width: 180px;
+    }
+}
